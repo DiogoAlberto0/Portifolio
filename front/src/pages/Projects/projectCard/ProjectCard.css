@@ -1,0 +1,36 @@
+.project-card {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+
+    border: 3px solid #FFF;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    /* justify-content: center; */
+    align-items: center;
+
+    width: 350px;
+    height: 400px;
+
+    margin: 10px;
+}
+.divisor-card {
+    background-color: #FFF;
+    height: 3px;
+    width: 90%;
+
+    margin: 5px 0px;
+}
+.project-img {
+    height: 150px;
+}
+.card-link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.obs-card {
+    width: 80%;
+}

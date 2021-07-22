@@ -1,0 +1,34 @@
+.home-edit {
+    background-color: #232323;
+    color: #fff;
+
+    min-height: 100vh;
+    min-width: 100vw;
+
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-form {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.home-edit-input {
+    background-color: #888888;
+
+    height: 50vh;
+    width: 50vw;
+
+    border:0px;
+    border-radius: 20px;
+
+    padding: 20px;
+}

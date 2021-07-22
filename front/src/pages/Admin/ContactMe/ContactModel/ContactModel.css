@@ -1,0 +1,29 @@
+.contact-model {
+    background-color: rgba(0, 0, 0, 0.664);
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    max-width: 90vw;
+
+    border: 2px solid #fff;
+    border-radius: 20px;
+
+    padding: 5px;
+    margin: 20px 0px;
+}
+.contact-separator {
+    background-color: #FFF;
+    height: 2px;
+    width: 80vw;
+}
+.contact-subject {
+    width: 90vw;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}

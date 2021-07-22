@@ -1,0 +1,41 @@
+.project-edit-background {
+    position: absolute;
+
+    color: #fff;
+    background-color: #232323;
+    min-height: 100vh;
+    min-width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.form-project {
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+
+    height: 70vh;
+    width: 70vw;
+
+    border: solid 3px #fff;
+    border-radius: 10px;
+
+    padding: 20px;
+}
+.project-form-input {
+    background-color: rgb(73, 73, 73);
+
+    border: none;
+    border-radius: 5px;
+    height: 5vh;
+}
+.projects-buttons {
+    display: flex;
+    justify-content: space-between;
+}

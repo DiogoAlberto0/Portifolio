@@ -1,0 +1,22 @@
+.project-content{
+    background-color: #2B2B2B;
+    
+    display: flex;
+    flex-direction: column;
+
+    min-height: calc(100vh - 40px);
+    max-height: 100%;
+
+    padding-top: 40px;
+    padding-left: 10px;
+}
+.project-title {
+    color: #fff;
+}
+
+.project-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

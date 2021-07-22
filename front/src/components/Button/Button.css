@@ -1,0 +1,12 @@
+.default-button {
+    width: 250px;
+    height: 60px;
+
+    background-color: rgba(0, 0, 0, 0);
+    
+    border: 4px solid #fff;
+    border-radius: 10px;
+
+    color: #FFF;
+    font-size: 30px;
+}

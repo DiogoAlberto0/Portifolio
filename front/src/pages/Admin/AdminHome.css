@@ -1,0 +1,23 @@
+.background-admin-home {
+    position: absolute;
+
+    background-color: #232323;
+    min-height: 100vh;
+    min-width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.menu-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.admin-button-out {
+    margin-top: 50px;
+}
