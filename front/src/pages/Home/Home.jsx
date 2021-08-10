@@ -10,11 +10,16 @@ import baseApiUrl from '../../services/api'
 function Home( props ) {
 
     const [homeText, setHomeText] = useState({})
-
+    
     useEffect(() => {
-        baseApiUrl.get('/home/1')
-            .then(resp => setHomeText(...resp.data))
-            .catch(err => console.warn(err))
+        
+        const getHomeText = async () => {
+            await baseApiUrl.get('/home/1')
+                .then(resp => setHomeText(...resp.data))
+                .catch(err => console.warn(err))
+        }
+
+        getHomeText()
     }, [])
 
     function redirectTo() {
@@ -23,8 +28,8 @@ function Home( props ) {
     return(
         <div className="background-image-one">
             <div className="content-home">
-                <h1>Diogo Alberto</h1>
-                <p>{homeText.text}</p>
+                <h1 className="home-title">Diogo Alberto</h1>
+                <p className="home-text">{`${homeText.text}`}</p>
                 <Button title="Projetos" onClick={redirectTo}/>
             </div>
         </div>

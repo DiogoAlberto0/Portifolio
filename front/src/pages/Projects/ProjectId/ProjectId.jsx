@@ -2,7 +2,7 @@ import './ProjectId.css'
 
 import { useEffect, useState } from 'react'
 
-import { Carousel } from '3d-react-carousal'
+import Carousel from '../../../components/Carousel/Carousel'
 
 
 import baseApiUrl from '../../../services/api'
@@ -55,11 +55,12 @@ const ProjectId = props => {
         getProject()
         getImages()
         
-    }, [props.match.params.id])
+    }, [props])
 
 
-    const slides = projectId.images.map(image => {
-        return <img key={image.id} src={image.url} alt={image.id}></img>
+    const slides = [] 
+    projectId.images.map(image => {
+        return slides.push(<img key={image.id} src={`${image.url}`} alt={image.id}></img>)
     })
     return(
         <div className="project-id-background">
@@ -69,16 +70,15 @@ const ProjectId = props => {
                     <div className="project-id-divisor"></div>
                 </div>
                 <div className="carousel">
-                    <Carousel slides={slides}></Carousel>
-
+                    <Carousel images={slides}></Carousel>
                 </div>
                 <div className="project-id-infos">
                     <div className="project-id-divisor"></div>
-                    <h2>Linguagem de programação: {projectId.project.programingLanguage}</h2>
+                    <h2 className="project-infos">Linguagem: {projectId.project.programingLanguage}</h2>
                     <div className="project-id-divisor"></div>
-                    <h2><a href={projectId.project.repositoryLink} target="_blank">Link do repositório</a></h2>
+                    <h2 className="project-infos"><a href={projectId.project.repositoryLink} target="_blank" rel="noreferrer">Repositório</a></h2>
                     <div className="project-id-divisor"></div>
-                    <h2><a href={projectId.project.link} target="_blank">Link do projeto</a></h2>
+                    <h2 className="project-infos"><a href={projectId.project.link} target="_blank" rel="noreferrer">Link</a></h2>
                     <div className="project-id-divisor"></div>
                     <h3 className="project-obs">Resumo: <br/>
                         {projectId.project.obs}
@@ -86,10 +86,11 @@ const ProjectId = props => {
                     <div className="project-id-divisor"></div>
                 </div>
                 <div className="project-id-user">
-                    <h1>Developer: {projectId.user.name}</h1>
+                    <h1 className="project-infos">Developer: {projectId.user.name}</h1>
+                    <div className="project-id-divisor"></div>
                     <div className="project-is-user-infos">
-                        <h2>Telefone: {projectId.user.phone}</h2>
-                        <h2>E-mail: {projectId.user.email}</h2>
+                        <h2 className="project-infos">Telefone: {projectId.user.phone}</h2>
+                        <h2 className="project-infos">E-mail: {projectId.user.email}</h2>
                     </div>
                 </div>
                 

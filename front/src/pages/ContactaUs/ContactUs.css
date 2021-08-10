@@ -14,7 +14,7 @@
     height: calc(100vh - 200px);
     width: calc(100vw - 200px);
 
-    border: 4px solid #fff;
+    border: 2px solid chartreuse;
     border-radius: 10px;
 
     padding: 30px;
@@ -25,29 +25,45 @@
 
     height: 100%;
     justify-content: space-around;
-    color: #fff;
 }
 
 .contact-title {
-    display: flex;
-    justify-content: center;
-
-
+    text-align: center;
 }
 
 .contact-button {
     display: flex;
     justify-content: center;
+
+    padding: 5px;
+    /* background-color: brown; */
 }
 
 .default-contact-input {
-    height: 30px;
-
     background-color: rgba(196, 196, 196, 0.5);
 
     border: 0px;
     border-radius: 5px;
 }
+.other-inputs {
+    height: 50px;
+}
 .subject-input {
-    height: 100px;
+    height: 100%;
+}
+
+@media(max-width: 425px){
+    .contact-title{
+        font-size: 20px;
+    }
+    .contact-content{
+        height: 80vh;
+        width: 100vw;
+        padding: 10px;
+    }
+}
+@media(max-width: 320px) {
+    .contact-content{
+        margin-top: 50px;
+    }
 }

@@ -2,16 +2,17 @@ import './ProjectCard.css'
 
 
 function ProjecrCard( props ) {
-
-
     return(
         <div className="project-card">
-            <h1>{ props.title }</h1>
+            <div className="project-card-title">
+                <h1>{ props.name }</h1>
+            </div>
             <div className="divisor-card"></div>
             <img
-                src={ props.img ? props.img : 'https://sindafsp.org.br/wp-content/uploads/2017/10/wallpaper.wiki-Full-hd-pc-photos-free-download-PIC-WPC002354-1.jpg' }
+                key={props.id}
+                src={`${props.img}`}
                 className="project-img" 
-                alt=""
+                alt={`${props.img}`}
             />
             <div className="divisor-card"></div>
             <a href={ props.repositoryLink } className="card-link" target="blank"> Link do repositório</a>

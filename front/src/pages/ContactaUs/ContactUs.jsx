@@ -37,15 +37,13 @@ const ContactUs = (props) => {
         <div className="contact-page">
             <div className="contact-content">
                 <form className="contact-form" onSubmit={e => submitContact(e)}>
-                    <div className="contact-title">
-                        <h1>Entre em contato</h1>
-                    </div>
+                    <h1 className="contact-title">Entre em contato</h1>
 
                     <label htmlFor="name">Nome:</label>
                     <input
                         type="text"
                         name="name"
-                        className="default-contact-input"
+                        className="default-contact-input other-inputs"
                         onChange={e => changeContact(e)}
                     />
 
@@ -53,7 +51,7 @@ const ContactUs = (props) => {
                     <input 
                         type="text"
                         name="email"
-                        className="default-contact-input"
+                        className="default-contact-input other-inputs"
                         onChange={e => changeContact(e)}
                     />
 

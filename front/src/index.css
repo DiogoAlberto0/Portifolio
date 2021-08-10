@@ -1,8 +1,16 @@
+
+@font-face{
+    font-family:'digital-clock-font';
+    src: url('./font//PressStart2P-Regular.ttf');
+}
 * {
     margin: 0px;
     padding: 0px;
     top: 0px;
     left: 0px;
+
+    font-family: digital-clock-font;
+    color: chartreuse;
 }
 body {
     font-size: 1rem;

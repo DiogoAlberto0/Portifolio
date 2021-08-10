@@ -4,40 +4,59 @@ import ProjectCard from './projectCard/ProjectCard'
 
 import baseApiUrl from '../../services/api'
 import history from '../../Main/history'
-import { /*useContext,*/ useEffect, useState } from 'react'
-// import { Context } from '../../Context/AuthContext'
+import { useEffect, useState } from 'react'
 
-const inicialState = {
-    list: []
-}
 
 function ProjectsPage(props) {
 
-    const [projects, setProjects] = useState({...inicialState})
+    const [ projects, setProjects ] = useState([])
 
     useEffect(() => {
-        async function getProject() {
+        const getProjects = async () => {
             await baseApiUrl
-                .get('/projects')
-                .then(resp => setProjects({list: resp.data}))
-                .catch(e => console.warn(e))
+                .get(`/projects`)
+                .then(resp => getImages([...resp.data]))
+                .catch(err =>console.warn(err.response))
         }
-        getProject()
+        getProjects()
+
+        const getImages = async (projectsArray) => {
+
+            const array = [...projectsArray]
+            setProjects([...array])
+            for (let index = 0; index < array.length; index++) {
+                const element = array[index];
+
+                await baseApiUrl
+                    .get(`/img/thumb/${element.id}`)
+                    .then(resp => setProjects(prevState => {
+                        if(element.id === resp.data.projectId) {
+                            prevState[index].thumbLink = resp.data.url
+                            return [...prevState]
+                        }
+                    }))
+                    .catch(err => console.warn(err.response))
+            }
+        }
     }, [])
+
     return (
         <div className="project-content">
             <h1 className="project-title">Projetos</h1>
             <div className="project-area">
             {
-                projects.list.map(project => {
-                    return(<ProjectCard 
-                        key={`${project.id}`} 
-                        title={project.name}
-                        img={project.thumbLink}
-                        repositoryLink={project.repositoryLink}
-                        programingLanguage={project.programingLanguage}
-                        detailsLink={e => history.push(`/projects/details/${project.id}`)}
-                    />)
+                projects.map(project => {
+                    return(
+                        <ProjectCard
+                            key={project.id}
+                            id={project.id}
+                            name={project.name}
+                            repositoryLink={project.repositoryLink}
+                            programingLanguage={project.programingLanguage}
+                            detailsLink={() => history.push(`/projects/details/${project.id}`)}
+                            img={project.thumbLink}
+                        />
+                    )
                 })
             }
             </div>

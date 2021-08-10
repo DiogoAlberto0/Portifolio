@@ -1,8 +1,7 @@
 const cors = require('cors')
-const express = require('express')
 const morgan = require('morgan')
+const express = require('express')
 
-const path = require('path')
 
 
 module.exports = app => {
@@ -11,7 +10,4 @@ module.exports = app => {
     app.use(express.urlencoded({ extended: true}))
     app.use(morgan("dev"))
 
-    //upload images
-
-    app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp', 'uploads')))
 }

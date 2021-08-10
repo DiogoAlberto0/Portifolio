@@ -28,7 +28,7 @@ module.exports = app => {
 
         return res.json({
             ...payload,
-            token: jwt.encode(payload, process.env.AUTH_SECRET)
+            token: jwt.encode(payload, authSecret)
         })
     }
     const validateToken = async (req, res, next) => {
@@ -36,7 +36,7 @@ module.exports = app => {
 
             try{
                 if(userData) {
-                    const token = jwt.decode(userData, process.env.AUTH_SECRET)
+                    const token = jwt.decode(userData, authSecret)
                     if(new Date(token.exp * 1000) > new Date()) {
                         req.userId = token.id
                         return next()

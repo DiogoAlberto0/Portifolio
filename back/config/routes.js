@@ -1,3 +1,6 @@
+const path = require('path')
+const express = require('express')
+
 module.exports = app => {
 
     const auth = app.config.passport.authenticate()
@@ -43,10 +46,14 @@ module.exports = app => {
 
     // Imagens
 
-    app.post('/img/', app.config.multer, (app.api.image.createImg))
+    app.post('/img', app.config.multer, (app.api.image.createImg))
     
     app.get('/img/:projectid', app.api.image.getImg)
 
+    app.get('/img/thumb/:projectid', app.api.image.getImgThumb)
+
     app.delete('/img/:id', auth, app.api.image.deleteImg)
+
+    app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp', 'uploads')))
 
 }

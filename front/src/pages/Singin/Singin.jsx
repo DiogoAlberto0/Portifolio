@@ -48,7 +48,6 @@ function Singin(props) {
                         onChange={(e) => changeUser(e)}
                     />
                     <Button title="Entrar" type="submit"/>
-                    <p>Ainda não esta cadastrado? clique aqui.</p>
                 </form>
             </div>
         </div>

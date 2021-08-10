@@ -65,5 +65,14 @@ module.exports = app => {
             .catch(err => res.status(500).send(err))
     }
 
-    return { createImg, deleteImg, getImg }
+    const getImgThumb = async (req, res) => {
+        await app.db('imgprojects')
+            .select()
+            .first()
+            .where('projectId', req.params.projectid)
+            .then(resp => res.json(resp))
+            .catch(err => res.status(500).send(err))
+    }
+
+    return { createImg, deleteImg, getImg,  getImgThumb}
 }
