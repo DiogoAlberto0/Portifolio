@@ -1,27 +1,25 @@
 .background-menu {
-    display: flex;
-    justify-content: space-between;
-
-    min-height: 40px;
-    width: 100vw;
-
-    background-color: rgba(0,0,0,0.7);
-
-    position: fixed;
-
+    background-color: black;
+    color: chartreuse;
+    position: static;
 }
 .menu-left-side {
-    /* background-color: blue; */
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
 }
 .menu-right-side {
-    /* background-color: blueviolet; */
     display: flex;
 }
 .menu-link {
     text-decoration: none;
-    text-align: center;
-    padding: 10px;
+    color: chartreuse;
+}
+.menu-link:hover {
+    color: blue;
+}
+@media(max-width: 320px) {
+    .menu-link {
+        font-size: 17px;
+
+    }
 }

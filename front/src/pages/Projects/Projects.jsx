@@ -41,24 +41,28 @@ function ProjectsPage(props) {
     }, [])
 
     return (
-        <div className="project-content">
-            <h1 className="project-title">Projetos</h1>
-            <div className="project-area">
-            {
-                projects.map(project => {
-                    return(
-                        <ProjectCard
-                            key={project.id}
-                            id={project.id}
-                            name={project.name}
-                            repositoryLink={project.repositoryLink}
-                            programingLanguage={project.programingLanguage}
-                            detailsLink={() => history.push(`/projects/details/${project.id}`)}
-                            img={project.thumbLink}
-                        />
-                    )
-                })
-            }
+        <div className="project-background">
+            <div className="project-content">
+
+                <h1 className="project-title">Projetos</h1>
+                <div className="project-area">
+                {
+                    projects.map(project => {
+                        return(
+                            <ProjectCard
+                                key={project.id}
+                                id={project.id}
+                                name={project.name}
+                                repositoryLink={project.repositoryLink}
+                                programingLanguage={project.programingLanguage}
+                                detailsLink={() => history.push(`/projects/details/${project.id}`)}
+                                img={project.thumbLink}
+                            />
+                        )
+                    })
+                }
+                </div>
+
             </div>
         </div>
     )

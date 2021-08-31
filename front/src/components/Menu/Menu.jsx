@@ -1,20 +1,29 @@
 import './Menu.css'
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link } from 'react-router-dom'
 
-function Menu( props ) {
+import { Navbar, Container, Nav } from 'react-bootstrap'
 
-    return(
-        <div className = "background-menu" v-if={props.vif}>
-            <div className = "menu-left-side">
-                <Link to = "/" className = "menu-link">Home</Link>
-                <Link to = "/projects" className = "menu-link">Projetos</Link>
-                <Link to = "/contact/us" className = "menu-link">Contate-nos</Link>
-            </div>
-            <div className="menu-right-side">
-                <Link to="/singin" className="menu-link">Entrar</Link>
-            </div>
-        </div>
+function Menu(props) {
+
+    return (
+        <Navbar expand="lg" className="background-menu">
+            <Container>
+                <Navbar.Brand><Link to="/" className="menu-link">Diogo Alberto</Link></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav">
+                    <i class="fas fa-bars" style={{color: 'chartreuse', fontSize: `${28}px`}}></i>
+                </Navbar.Toggle>
+                <Navbar.Collapse id="basic-navbar-nav" className="teste">
+                    <Nav className="me-auto" >
+                        <Nav.Link><Link to="/projects" className="menu-link">Projetos</Link></Nav.Link>
+                        <Nav.Link><Link to="/contact/us" className="menu-link">Contate-nos</Link></Nav.Link>
+                    </Nav>
+                    <Nav className="mr-auto" >
+                        <Nav.Link><Link to="/singin" className="menu-link">Entrar</Link></Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     )
 }
 

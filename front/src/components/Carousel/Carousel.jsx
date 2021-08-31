@@ -30,7 +30,7 @@ const Carousel = props => {
         }
     }
     return(
-        <div className="carousel-background">
+        <div className={`carousel-background ${props.secondaryClass}`}>
             <i className="fas fa-arrow-left fa-2x" onClick={e => rmvIndex(index, images)}></i>
             {choseImage(index, images)}
             <i className="fas fa-arrow-right fa-2x" onClick={e => addIndex(index, images)}></i>

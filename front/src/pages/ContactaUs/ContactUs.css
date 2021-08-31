@@ -1,69 +1,39 @@
 .contact-page {
-    min-height: 100vh;
-    min-width: 100vw;
     background-color: #2B2B2B;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 }
-
 .contact-content {
-    background-color: rgba(0, 0, 0, 0.5 );
-
-    height: calc(100vh - 200px);
-    width: calc(100vw - 200px);
+    background-color: rgba(0, 0, 0, 0.5);
+    height: calc(100vh - 56px);
 
     border: 2px solid chartreuse;
     border-radius: 10px;
 
-    padding: 30px;
+    padding: 20px;
 }
 .contact-form {
     display: flex;
     flex-direction: column;
 
     height: 100%;
-    justify-content: space-around;
 }
-
 .contact-title {
     text-align: center;
 }
-
-.contact-button {
-    display: flex;
-    justify-content: center;
-
-    padding: 5px;
-    /* background-color: brown; */
-}
-
 .default-contact-input {
-    background-color: rgba(196, 196, 196, 0.5);
-
     border: 0px;
     border-radius: 5px;
-}
-.other-inputs {
-    height: 50px;
+    background-color: #888888;
 }
 .subject-input {
     height: 100%;
 }
-
-@media(max-width: 425px){
-    .contact-title{
-        font-size: 20px;
-    }
-    .contact-content{
-        height: 80vh;
-        width: 100vw;
-        padding: 10px;
-    }
+.contact-button {
+    display: flex;
+    justify-content: center;
 }
-@media(max-width: 320px) {
-    .contact-content{
-        margin-top: 50px;
+@media(max-width: 425px) {
+    .contact-content {
+        font-size: 15px;
     }
 }

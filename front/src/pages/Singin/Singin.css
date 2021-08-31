@@ -1,8 +1,7 @@
 .singin-content {
-    color: #fff;
     background-color: rgba(0, 0, 0, 0.7);
 
-    width: 300px;
+    width: 350px;
     height: 400px;
 
     display: flex;
@@ -41,4 +40,21 @@
 }
 .singin-input::placeholder {
     color: chartreuse;
+}
+
+@media(max-height: 425px) {
+    .singin-content {
+        height: calc(90vh - 56px);
+    }
+    .singin-title {
+        font-size: 20px;
+    }
+}
+@media(max-width: 350px) {
+    .singin-content {
+        width: 90vw;
+    }
+    .singin-input{
+        width: 85vw;
+    }
 }

@@ -2,9 +2,10 @@
     background-image: url("../images/background-image-01.png");
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    height: calc(100vh - 56px);
 
     display: flex;
     justify-content: center;
     align-items: center;
+
 }

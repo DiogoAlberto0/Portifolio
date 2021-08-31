@@ -7,8 +7,28 @@
     border: 4px solid chartreuse;
     border-radius: 10px;
 
-    color: chartreuse;
     font-size: 1.5rem;
 
     padding: 10px;
+}
+.default-button-content {
+    text-decoration: none;
+    color: chartreuse;
+}
+
+.default-button:hover {
+    border: 4px solid blue;
+}
+.default-button:hover > .default-button-content{
+    color: blue;
+
+}
+
+@media(max-width: 425px) {
+    .default-button {
+        width: 200px;
+        height: 50px;
+        font-size: 1rem;
+        padding: 2px;
+    }
 }

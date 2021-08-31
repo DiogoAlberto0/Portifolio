@@ -69,9 +69,7 @@ const ProjectId = props => {
                     <h1>{projectId.project.name}</h1>
                     <div className="project-id-divisor"></div>
                 </div>
-                <div className="carousel">
-                    <Carousel images={slides}></Carousel>
-                </div>
+                <Carousel images={slides} secondaryClass="project-id-carousel"></Carousel>
                 <div className="project-id-infos">
                     <div className="project-id-divisor"></div>
                     <h2 className="project-infos">Linguagem: {projectId.project.programingLanguage}</h2>

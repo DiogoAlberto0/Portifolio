@@ -1,37 +1,41 @@
 .project-card {
     background-color: rgba(0, 0, 0, 0.5);
+    height: 350px;
+    width: 300px;
 
-    border: 3px solid chartreuse;
-    border-radius: 10px;
+    border: 2px solid chartreuse;
+    border-radius: 5px;
 
     display: flex;
     flex-direction: column;
 
-    /* justify-content: center; */
-    align-items: center;
-
-    width: 350px;
-    height: 400px;
+    overflow: hidden;
 
     margin: 10px;
 }
-.divisor-card {
-    background-color: chartreuse;
-    height: 3px;
-    width: 90%;
-
-    margin: 5px 0px;
+.project-card:hover {
+    border: 2px solid blue;
+}
+.project-card-titles {
+    font-size: 20px;
+    text-align: center;
 }
 .project-img {
-    height: 150px;
+    padding: 5px;
+}
+.divisor-card {
+    height: 2px;
+    width: 300px;
+
+    background-color: chartreuse;
+}
+.project-card:hover > .divisor-card{
+    background-color: blue;
 }
 .card-link {
-    text-decoration: none;}
-
-.obs-card {
-    width: 80%;
+    text-decoration: none;
+    color: chartreuse;
 }
-.project-card-title{
-    /* background-color: blue; */
-    padding: 10px;
+.card-link:hover {
+    color: blue;
 }

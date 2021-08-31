@@ -3,10 +3,8 @@ import './ProjectCard.css'
 
 function ProjecrCard( props ) {
     return(
-        <div className="project-card">
-            <div className="project-card-title">
-                <h1>{ props.name }</h1>
-            </div>
+        <div onClick={props.detailsLink} className="project-card">
+            <h1 className="project-card-titles">{ props.name }</h1>
             <div className="divisor-card"></div>
             <img
                 key={props.id}
@@ -15,11 +13,9 @@ function ProjecrCard( props ) {
                 alt={`${props.img}`}
             />
             <div className="divisor-card"></div>
-            <a href={ props.repositoryLink } className="card-link" target="blank"> Link do repositório</a>
+            <a href={ props.repositoryLink } className="card-link project-card-titles" target="blank"> Link do repositório</a>
             <div className="divisor-card"></div>
-            <h2>{props.programingLanguage}</h2>
-            <div className="divisor-card"></div>
-            <h2 onClick={props.detailsLink}>+Detalhes</h2>
+            <h2 className="project-card-titles card-link">+Detalhes</h2>
         </div>
     )
 }

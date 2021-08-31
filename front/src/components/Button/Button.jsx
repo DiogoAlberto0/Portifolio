@@ -3,8 +3,8 @@ import './Button.css'
 function Button ( props ) {
 
     return (
-        <button className={`default-button ${props.secondaryClass}`} {...props}>
-            {props.title}
+        <button id="default-button" className={`default-button ${props.secondaryClass}`} {...props}>
+            <a htmlFor="default-button" className="default-button-content" href>{props.title}</a>
         </button>
     )
 }
